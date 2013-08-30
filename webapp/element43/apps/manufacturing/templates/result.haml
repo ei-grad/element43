@@ -13,11 +13,11 @@
       Manufacturing
     %li
       %span.divider >
-      %a{'href':'{% url \'manufacturing_select_blueprint\' %}'}
+      %a{'href':'{% url manufacturing_select_blueprint %}'}
         Blueprint Search ({{ data.blueprint_name }})
     %li
       %span.divider >
-      %a{'href':'{% url \'manufacturing_calculator\' data.blueprint_type_id %}'}
+      %a{'href':'{% url manufacturing_calculator data.blueprint_type_id %}'}
         Change Job Parameters
     %li
       %span.divider >

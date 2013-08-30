@@ -10,7 +10,7 @@
     .alert.alert-error
       %i.icon-white.icon-warning-sign
       = form.non_field_errors
-  %form.well.form-horizontal{'action':'{% url \'tradefinder\' %}', 'method':'post'}
+  %form.well.form-horizontal{'action':'{% url tradefinder %}', 'method':'post'}
     %fieldset
       - csrf_token
       %legend

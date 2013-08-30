@@ -19,7 +19,7 @@
       .navbar.navbar-top
         .navbar-inner
           .container
-            %a.brand{'href':'{% url \'home\' %}'}
+            %a.brand{'href':'{% url home %}'}
               %img{'src':'{{ STATIC_URL }}images/logo.png','alt':'element43','width':'100px','height':'20px','style':'float:left;'}
               %span.label.label-important{'style':'float:left;'}
                 BETA
@@ -30,47 +30,47 @@
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    %a{'href':'{% url \'browser\' %}'} Browse Market
+                    %a{'href':'{% url browser %}'} Browse Market
                   - if request|is_igb
                     %li
-                      %a{'href':'{% url \'scanner_random\' %}'} Market Scanner - Random
+                      %a{'href':'{% url scanner_random %}'} Market Scanner - Random
                     - if request|igb_is_trusted
                       %li
-                        %a{'href':'{% url \'scanner_region\' %}'} Market Scanner - Region
+                        %a{'href':'{% url scanner_region %}'} Market Scanner - Region
               %li.dropdown
                 %a.dropdown-toggle{'href':'#', 'data-toggle':'dropdown'}
                   Trading
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    %a{'href':'{% url \'station_ranking\' %}'} Top Stations
+                    %a{'href':'{% url station_ranking %}'} Top Stations
                   %li
-                    %a{'href':'{% url \'tradefinder\' %}'} Tradefinder
+                    %a{'href':'{% url tradefinder %}'} Tradefinder
               %li.dropdown
                 %a.dropdown-toggle{'href':'#', 'data-toggle':'dropdown'}
                   Manufacturing
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    %a{'href':'{% url \'manufacturing_select_blueprint\' %}'} Calculator
+                    %a{'href':'{% url manufacturing_select_blueprint %}'} Calculator
               %li.dropdown
                 %a.dropdown-toggle{'href':'#', 'data-toggle':'dropdown'}
                   Help
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    %a{'href':'{% url \'about_page\' %}'} About Element43
+                    %a{'href':'{% url about_page %}'} About Element43
                   %li
-                    %a{'href':'{% url \'api_docs\' %}'} Legacy API Documentation
+                    %a{'href':'{% url api_docs %}'} Legacy API Documentation
               %li
                 %a{'href':'/api/'} API
             %ul.nav.pull-right
               - if not user.is_authenticated
                 %li
-                  %a{'href':'{% url \'login\' %}?next={{request.path}}'}
+                  %a{'href':'{% url login %}?next\={{request.path}}'}
                     Login
                 %li
-                  %a{'href':'{% url \'registration\' %}'}
+                  %a{'href':'{% url registration %}'}
                     Register
               - else
                 %li.dropdown
@@ -79,7 +79,7 @@
                     %b.caret
                   %ul.dropdown-menu
                     %li
-                      %a{'href':'{% url \'dashboard\' %}'}
+                      %a{'href':'{% url dashboard %}'}
                         %i.icon-white.icon-home
                         Dashboard
                     %li.dropdown-submenu
@@ -88,11 +88,11 @@
                         Trading
                       %ul.dropdown-menu
                         %li
-                          %a{'href':'{% url \'wallet_orders_active\' %}'}
+                          %a{'href':'{% url wallet_orders_active %}'}
                             %i.icon-white.icon-asterisk
                             Active Orders
                         %li
-                          %a{'href':'{% url \'wallet_orders_archived\' %}'}
+                          %a{'href':'{% url wallet_orders_archived %}'}
                             %i.icon-white.icon-calendar
                             Archived Orders
                         - if characters_journal
@@ -103,7 +103,7 @@
                             %ul.dropdown-menu
                               - for char in characters_journal
                                 %li
-                                  %a{'href':'{% url \'wallet_journal\' char_id=char.id %}'}
+                                  %a{'href':'{% url wallet_journal char_id=char.id %}'}
                                     {{char.name}}
                         - if characters_transaction
                           %li.dropdown-submenu
@@ -113,18 +113,18 @@
                             %ul.dropdown-menu
                               - for char in characters_transaction
                                 %li
-                                  %a{'href':'{% url \'wallet_transactions\' char_id=char.id %}'}
+                                  %a{'href':'{% url wallet_transactions char_id=char.id %}'}
                                     {{char.name}}
                     %li.divider
                     %li
-                      %a{'href':'{% url \'settings\' %}'}
+                      %a{'href':'{% url settings %}'}
                         %i.icon-white.icon-wrench
                         Settings
                     %li
-                      %a{'href':'{% url \'logout\' %}'}
+                      %a{'href':'{% url logout %}'}
                         %i.icon-white.icon-off
                         Logout
-              %form.navbar-search{'id':'search','method':'post','action':'{% url \'search\' %}'}
+              %form.navbar-search{'id':'search','method':'post','action':'{% url search %}'}
                 - csrf_token
                 %input#main-search.search-query{'type':'text', 'placeholder':'Search anything...', 'name':'query'}
     .container

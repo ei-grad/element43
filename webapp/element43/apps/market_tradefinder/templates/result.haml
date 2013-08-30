@@ -33,7 +33,7 @@
                 %h4
                   {{start.name}} - {{trade.top_buy.0.generated_at|naturaltime}}
               .span2.text-right
-                %a.btn.btn-mini.btn-link{'href':'{% url \'quicklook_region\' type_id=trade.id region_id=start.id%}', 'target':'_blank', 'style': 'margin-top: 10px;'}
+                %a.btn.btn-mini.btn-link{'href':'{% url quicklook_region type_id=trade.id region_id=start.id%}', 'target':'_blank', 'style': 'margin-top: 10px;'}
                   » More
             %table.table.table-striped.table-condensed
               %thead
@@ -54,7 +54,7 @@
                       %td
                         %span{'class':'sec{{order.mapsolarsystem.security_level|sec0to10}}'}
                           • {{order.mapsolarsystem.security_level|sec0to1}}
-                        %a{'href':'{% url \'station\' station_id=order.stastation.id %}'}
+                        %a{'href':'{% url station station_id=order.stastation.id %}'}
                           = order.stastation.name|truncate_station_name
                       %td.text-right
                         = order.price|floatformat:"2"|intcomma
@@ -72,7 +72,7 @@
                 %h4
                  {{destination.name}} - {{trade.top_sell.0.generated_at|naturaltime}}
               .span2.text-right
-                %a.btn.btn-mini.btn-link{'href':'{% url \'quicklook_region\' type_id=trade.id region_id=destination.id%}', 'target':'_blank', 'style': 'margin-top: 10px;'}
+                %a.btn.btn-mini.btn-link{'href':'{% url quicklook_region type_id=trade.id region_id=destination.id%}', 'target':'_blank', 'style': 'margin-top: 10px;'}
                   » More
             %table.table.table-striped.table-condensed
               %thead
@@ -93,7 +93,7 @@
                       %td
                         %span{'class':'sec{{order.mapsolarsystem.security_level|sec0to10}}'}
                           • {{order.mapsolarsystem.security_level|sec0to1}}
-                        %a{'href':'{% url \'station\' station_id=order.stastation.id %}'}
+                        %a{'href':'{% url station station_id=order.stastation.id %}'}
                           = order.stastation.name|truncate_station_name
                       %td.text-right
                         = order.price|floatformat:"2"|intcomma
@@ -107,6 +107,6 @@
                             %i.icon-map-marker.icon-white
         %hr
         .text-right
-          %a.btn.btn-primary{'href':'{% url \'quicklook\' type_id=trade.id %}', 'target':'_blank'}
+          %a.btn.btn-primary{'href':'{% url quicklook type_id=trade.id %}', 'target':'_blank'}
             %i.icon-white.icon-chevron-right
             Global Quicklook

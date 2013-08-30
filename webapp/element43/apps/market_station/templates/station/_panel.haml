@@ -25,6 +25,6 @@
                     Show Market Details
       %hr
       .text-right
-        %a.btn.btn-primary{'href':'{% url \'quicklook_region\' type_id=item.type.id region_id=station.region_id %}', 'target':'_blank'}
+        %a.btn.btn-primary{'href':'{% url quicklook_region type_id=item.type.id region_id=station.region_id %}', 'target':'_blank'}
           %i.icon-white.icon-chevron-right
           Regional Quicklook
